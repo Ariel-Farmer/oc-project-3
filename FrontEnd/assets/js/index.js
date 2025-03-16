@@ -41,5 +41,25 @@ async function getCategories() {
 	}
 }
 
+async function displaycategories() {
+	const categories = await getcategories();
+	if (!categories) return;
+
+	const filterContainer = document.querySelector(".filter-container");
+	if (!filterContainer) {
+		console.error("Filter container not found in the DOM!");
+		return;
+	}
+	categories.forEach(function (category) {
+		const button = document.createElement("button");
+		button.textContent = category.name;
+		button.classList.add("category-button");
+		button.dataset.id = category.id;
+		filterContainer.appendChild(button);
+	});
+}
+
+displaycategories();
+
 // run display Data
 displayData();
