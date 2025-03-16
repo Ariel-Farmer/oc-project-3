@@ -28,5 +28,18 @@ async function displayData() {
 	});
 }
 
+async function getCategories() {
+	try {
+		const response = await fetch("http://localhost:5678/api/categories");
+		if (!response.ok) {
+			throw new Error("Network response error!");
+		}
+		const categories = await response.json();
+		return categories;
+	} catch (error) {
+		console.error("Error fetching categories:", error);
+	}
+}
+
 // run display Data
 displayData();
