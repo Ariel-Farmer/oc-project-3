@@ -41,8 +41,8 @@ async function getCategories() {
 	}
 }
 
-async function displaycategories() {
-	const categories = await getcategories();
+async function displayCategories() {
+	const categories = await getCategories();
 	if (!categories) return;
 
 	const filterContainer = document.querySelector(".filter-container");
@@ -59,7 +59,7 @@ async function displaycategories() {
 	});
 }
 
-displaycategories();
+displayCategories();
 
 // run display Data
 displayData();
