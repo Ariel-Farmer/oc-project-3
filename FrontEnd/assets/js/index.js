@@ -63,3 +63,11 @@ displayCategories();
 
 // run display Data
 displayData();
+
+const buttons = document.querySelectorAll("category-button");
+
+buttons.forEach(function (button) {
+	button.addEventListener("click", function () {
+		console.log(button.textContent + " clicked!");
+	});
+});

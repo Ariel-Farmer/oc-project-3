@@ -205,11 +205,11 @@ li:hover {
 	margin-bottom: 1em;
 }
 
-/* #filter-container {
-	display: flex;
-	align-content: space-between;
-	width: 100%;
-} */
+.category-button {
+	font-size: 30px;
+	margin: 30px;
+	background-color: salmon;
+}
 
 .gallery {
 	width: 100%;
