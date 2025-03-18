@@ -64,7 +64,7 @@ displayCategories();
 // run display Data
 displayData();
 
-const buttons = document.querySelectorAll("category-button");
+const buttons = document.querySelectorAll(".category-button");
 
 buttons.forEach(function (button) {
 	button.addEventListener("click", function () {
