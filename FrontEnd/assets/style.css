@@ -142,7 +142,7 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0;
+	margin: 50px 0px 150px 0px;
 }
 section {
 	margin: 50px 0;
@@ -300,4 +300,74 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em;
+}
+
+/* login page */
+
+.login-container {
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	display: flex;
+	flex-direction: column; /* Stack items vertically */
+	align-items: center; /* Center horizontally */
+	min-height: 100vh; /* Fill the viewport height */
+}
+
+.login-container h1 {
+	font-size: 24px;
+	margin-bottom: 25px;
+	color: #1d6154;
+	font-weight: 100;
+}
+
+.login-container label {
+	display: block;
+	text-align: left;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.login-container input {
+	width: calc(100% - 16px);
+	padding: 16px;
+	margin-bottom: 16px;
+	border: none;
+	font-size: 14px;
+	font-family: sans-serif;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+	min-width: 130px;
+	background-color: #1d6154;
+	color: white;
+	font-weight: lighter;
+	font-size: 14px;
+	font-family: "Syne";
+	padding: 12px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+button:hover {
+	background-color: #00332e;
+}
+.forgot-password {
+	display: block;
+	margin-top: 0.75rem;
+	color: #1d6154;
+	text-decoration: none;
+	font-size: 0.875rem;
+}
+.forgot-password:hover {
+	text-decoration: underline; /* Add underline on hover */
+	color: #00332e;
+}
+.forgot-password:focus {
+	text-decoration: underline; /* Keep underline on focus (keyboard navigation) */
+}
+.forgot-password:active {
+	text-decoration: underline; /* Ensure underline stays on click/tap */
 }
