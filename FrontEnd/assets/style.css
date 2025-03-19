@@ -178,9 +178,13 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
+nav a {
+	text-decoration: none;
+	color: black;
+}
 
 li:hover {
-	color: #b1663c;
+	color: grey;
 }
 #introduction {
 	display: flex;
@@ -338,7 +342,7 @@ footer nav ul {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button {
+.sign-in {
 	min-width: 130px;
 	background-color: #1d6154;
 	color: white;
@@ -351,7 +355,7 @@ button {
 	cursor: pointer;
 	margin-top: 1rem;
 }
-button:hover {
+.sign-in:hover {
 	background-color: #00332e;
 }
 .forgot-password {
