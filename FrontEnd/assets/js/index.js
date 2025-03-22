@@ -19,15 +19,17 @@ async function displayData() {
 	const gallery = document.getElementById("gallery");
 	//creating elements for each work and putting them on the page
 	data.forEach(function (work) {
-		const figure = document.createElement("figure");
-		const figcaption = document.createElement("figcaption");
-		figcaption.textContent = work.title;
-		const img = document.createElement("img");
-		img.src = work.imageUrl;
-		img.alt = work.title;
-		figure.appendChild(img);
-		figure.appendChild(figcaption);
-		gallery.appendChild(figure);
+		if (categoryId === null || work.categoryId === categoryId) {
+			const figure = document.createElement("figure");
+			const figcaption = document.createElement("figcaption");
+			figcaption.textContent = work.title;
+			const img = document.createElement("img");
+			img.src = work.imageUrl;
+			img.alt = work.title;
+			figure.appendChild(img);
+			figure.appendChild(figcaption);
+			gallery.appendChild(figure);
+		}
 	});
 }
 
@@ -56,6 +58,12 @@ async function displayCategories() {
 		console.error("Filter container not found in the DOM!");
 		return;
 	}
+	//add all button
+	const allButton = document.createElement("button");
+	allButton.textContent = "All";
+	allButton.classList.add("category-button");
+	allButton.dataset.id = "all";
+	filterContainer.appendChild(allButton);
 	//looping through categories and creating a button for each category in API data
 	categories.forEach(function (category) {
 		const button = document.createElement("button");
@@ -70,6 +78,11 @@ async function displayCategories() {
 	buttons.forEach(function (button) {
 		button.addEventListener("click", function () {
 			console.log(button.textContent + " clicked!");
+			const categoryId =
+				button.dataset.id === "all"
+					? null
+					: parseInt(button.dataset.id);
+			displayData(categoryId);
 		});
 	});
 }
