@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	form.addEventListener("submit", loginUser);
 });
 
-async function loginUser() {
+async function loginUser(event) {
 	//
 	event.preventDefault();
 	const email = document.getElementById("email").value;
 	const password = document.getElementById("password").value;
 
 	const loginData = {
-		email: email.value,
-		password: password.value,
+		"email": email.value,
+		"password": password.value,
 	};
 
 	try {
@@ -41,11 +41,6 @@ async function loginUser() {
 		}
 	} catch (error) {
 		console.error("Login error:", error.message);
-		const errorMessageElement = document.getElementById("error-message");
-		if (errorMessageElement) {
-			errorMessageElement.textContent = error.message;
-		} else {
-			alert(error.message);
-		}
+		// const errorMessageElement = document.getElementById("error-message");
 	}
 }
