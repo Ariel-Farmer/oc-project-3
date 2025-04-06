@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const form = document.querySelector("form");
-	form.addEventListener("submit", function (event) {
-		event.preventDefault();
-		loginUser();
-	});
+	form.addEventListener("submit", loginUser);
 });
 
-async function loginUser(event) {
+async function loginUser() {
 	//
+	event.preventDefault();
 	const email = document.getElementById("email").value;
 	const password = document.getElementById("password").value;
 
 	const loginData = {
-		email: email,
-		password: password,
+		email: email.value,
+		password: password.value,
 	};
 
 	try {
@@ -35,8 +33,8 @@ async function loginUser(event) {
 			const token = data.token;
 
 			localStorage.setItem("token", token);
-			const userId = data.userId;
-			localStorage.setItem("userId", userId);
+			// const userId = data.userId;
+			// localStorage.setItem("userId", userId);
 			window.location.href = "index.html";
 
 			console.log("Login successful!", data);

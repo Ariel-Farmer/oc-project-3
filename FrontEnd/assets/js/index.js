@@ -1,35 +1,35 @@
 console.log("Hello World");
-async function fetchData() {
-	//fetch works data from api and return it for use elsewhere
-	try {
-		const response = await fetch("http://localhost:5678/api/works");
+// async function fetchData() {
+// 	//fetch works data from api and return it for use elsewhere
+// 	try {
+// 		const response = await fetch("http://localhost:5678/api/works");
 
-		const data = await response.json();
-		console.log(data);
+// 		const data = await response.json();
+// 		console.log(data);
 
-		return data;
-	} catch (error) {
-		console.log("ERROR!");
-	}
-}
+// 		return data;
+// 	} catch (error) {
+// 		console.log("ERROR!");
+// 	}
+// }
 
-async function displayData() {
-	//retrieving data from API and waiting until retrieved to run function (array of objects)
-	const data = await fetchData();
-	const gallery = document.getElementById("gallery");
-	//creating elements for each work and putting them on the page
-	data.forEach(function (work) {
-		const figure = document.createElement("figure");
-		const figcaption = document.createElement("figcaption");
-		figcaption.textContent = work.title;
-		const img = document.createElement("img");
-		img.src = work.imageUrl;
-		img.alt = work.title;
-		figure.appendChild(img);
-		figure.appendChild(figcaption);
-		gallery.appendChild(figure);
-	});
-}
+// async function displayData() {
+// 	//retrieving data from API and waiting until retrieved to run function (array of objects)
+// 	const data = await fetchData();
+// 	const gallery = document.getElementById("gallery");
+// 	//creating elements for each work and putting them on the page
+// 	data.forEach(function (work) {
+// 		const figure = document.createElement("figure");
+// 		const figcaption = document.createElement("figcaption");
+// 		figcaption.textContent = work.title;
+// 		const img = document.createElement("img");
+// 		img.src = work.imageUrl;
+// 		img.alt = work.title;
+// 		figure.appendChild(img);
+// 		figure.appendChild(figcaption);
+// 		gallery.appendChild(figure);
+// 	});
+// }
 
 async function getCategories() {
 	//fetch categories data from api and return it for use elsewhere
@@ -100,12 +100,9 @@ async function displayCategoriesAndItems() {
 
 	// filters items based on a category ID and displays the filtered results
 	function filterItems(categoryId, items) {
-		const filteredItems =
-			categoryId === "all"
-				? items
-				: items.filter(
-						(item) => item.categoryId === parseInt(categoryId)
-				  );
+		const filteredItems = (categoryId = items.filter(
+			(item) => item.categoryId === parseInt(categoryId)
+		));
 		displayItems(filteredItems);
 	}
 

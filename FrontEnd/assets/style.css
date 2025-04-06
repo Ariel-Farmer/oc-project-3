@@ -383,3 +383,15 @@ footer nav ul {
 .forgot-password:active {
 	text-decoration: underline; /* Ensure underline stays on click/tap */
 }
+
+.edit-banner {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 26px;
+}
+
+.edit-button {
+	font-size: 19px;
+	color: black;
+}
