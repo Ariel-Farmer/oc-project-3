@@ -77,6 +77,10 @@ async function displayCategoriesAndItems() {
 	allButton.classList.add("category-button");
 	allButton.dataset.id = "all";
 	filterContainer.appendChild(allButton);
+	allButton.addEventListener("click", async function () {
+		const allItems = await getItems();
+		displayItems(allItems);
+	});
 
 	//looping through categories and creating a button for each category in API data
 	categories.forEach(function (category) {
@@ -85,18 +89,22 @@ async function displayCategoriesAndItems() {
 		button.classList.add("category-button");
 		button.dataset.id = category.id;
 		filterContainer.appendChild(button);
-	});
-
-	//apply click feature to all the buttons individually and log clicks //select category buttons after created and attach event-listeners
-	const buttons = document.querySelectorAll(".category-button");
-
-	//adds a click event to buttons, triggering the filterItems function with the button's ID.
-	buttons.forEach(function (button) {
 		button.addEventListener("click", function () {
 			const categoryId = button.dataset.id;
 			filterItems(categoryId, items);
 		});
 	});
+
+	//apply click feature to all the buttons individually and log clicks //select category buttons after created and attach event-listeners
+	// const buttons = document.querySelectorAll(".category-button");
+
+	//adds a click event to buttons, triggering the filterItems function with the button's ID.
+	// buttons.forEach(function (button) {
+	// 	// button.addEventListener("click", function () {
+	// 	// 	const categoryId = button.dataset.id;
+	// 	// 	filterItems(categoryId, items);
+	// 	// });
+	// });
 
 	// filters items based on a category ID and displays the filtered results
 	function filterItems(categoryId, items) {
