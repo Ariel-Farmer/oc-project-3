@@ -10,8 +10,8 @@ async function loginUser(event) {
 	const password = document.getElementById("password").value;
 
 	const loginData = {
-		"email": email.value,
-		"password": password.value,
+		"email": email,
+		"password": password,
 	};
 
 	try {
