@@ -32,7 +32,7 @@ async function loginUser(event) {
 			console.log("Response Data:", data);
 			const token = data.token;
 
-			localStorage.setItem("token", token);
+			sessionStorage.setItem("token", token);
 			// const userId = data.userId;
 			// localStorage.setItem("userId", userId);
 			window.location.href = "index.html";
