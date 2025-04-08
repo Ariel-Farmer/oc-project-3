@@ -125,3 +125,18 @@ async function displayCategoriesAndItems() {
 	displayItems(items);
 }
 displayCategoriesAndItems();
+
+// display and hide editing banner and button
+
+function editingMode() {
+	// Hide editing mode if user not logged in (inline in html)
+	// check if sessionStorage.token has a value
+	if (sessionStorage.token) {
+		const editButton = document.querySelector(".edit-button");
+		const editBanner = document.querySelector(".edit-banner");
+		editBanner.style.display = "block";
+		editButton.style.display = "inline";
+	}
+	// show editing mode if user is logged in
+}
+editingMode();
